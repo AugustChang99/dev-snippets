@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- =========================================================================
+【DOM tree主要架構&定位記號查詢】@?
+
+  說明：Ctrl+F輸入對應的定位用記號可快速跳至該段落。輸入 @? 可快速跳回本段落。
+
+  定位記號             DOM tree主要架構
+--------------------------------------------------
+| @html       | html                             |
+| @head       |   |-head                         |
+| @body       |   |-body                         |
+| @B#1        |   |-div(class:top-container)     |
+| @header     |     |-header                     |
+| @nav        |     |-nav                        |
+| @B#2        |   |-div(class:container)         |
+| @B2L        |     |-div(id:left_panel)         |
+| @B2M        |     |-div(id:main_frame)         |
+| @B2R        |     |-div(id:right_panel)        |
+| @footer     |   |-footer                       |
+--------------------------------------------------
+
+========================================================================== -->
+<html lang="zh-tw"><!-- @html -->
+  <head><!-- @head -->
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網頁作品</title>
+    <link rel="icon" href="./icon/icon.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body><!-- @body -->
+    <div class="top-container"><!-- @B#1 -->
+      <header><!-- @header -->
+        <a href="./html/readme.html" target="main_frame_display">
+          <img src="icon/icon.png" style="width:100px;">
+        </a>
+      </header>
+      <nav><!-- @nav -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" id="toggle_btn_left">☰</a>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">AI 工具</a>
+          <div class="dropdown-content">
+            <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
+            <a href="https://copilot.microsoft.com/" target="_blank">Copilot</a>
+            <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+            <a href="https://www.perplexity.ai/" target="_blank">Perplexity</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">w3schools</a>
+          <div class="dropdown-content">
+            <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a>
+            <a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a>
+            <a href="https://www.w3schools.com/js/default.asp" target="_blank">JAVASCRIPT</a>
+            <a href="https://www.w3schools.com/bootstrap5/index.php" target="_blank">BOOTSTRAP5</a>
+            <a href="https://www.w3schools.com/react/default.asp" target="_blank">REACT</a>
+            <a href="https://www.w3schools.com/vue/index.php" target="_blank">VUE</a>
+            <a href="https://www.w3schools.com/nodejs/default.asp" target="_blank">NODEJS</a>
+            <a href="https://www.w3schools.com/git/default.asp" target="_blank">GIT</a>
+            <a href="https://www.w3schools.com/bash/index.php" target="_blank">BASH</a>
+          </div>
+        </li>  
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">其它網站</a>
+          <div class="dropdown-content">
+            <a href="https://github.com/" target="_blank">Github</a>
+            <a href="https://linux.vbird.org/" target="_blank">鳥哥私房菜</a>
+            <a href="https://www.runoob.com/" target="_blank">菜鳥教程</a>
+          </div>
+        </li>  
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn" id="toggle_btn_right">☰</a>
+        </li>          
+      </nav>
+    </div>
+    <div class="container"><!-- @B#2 -->
+      <div id="left_panel"><!-- @B2L -->
+        <ul>        
+          <li class="left_panel_list"><a href="./pages/2025.12.30/2025.12.30上課.html" target="main_frame_display">2025.12.30上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2025.12.31/2025.12.31上課.html" target="main_frame_display">2025.12.31上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.02/2026.01.02上課.html" target="main_frame_display">2025.01.02上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.05/2026.01.05上課.html" target="main_frame_display">2025.01.05上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.06/2026.01.06上課.html" target="main_frame_display">2025.01.06上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.07/2026.01.07上課.html" target="main_frame_display">2025.01.07上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.08/2026.01.08上課.html" target="main_frame_display">2025.01.08上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.09/2026.01.09上課.html" target="main_frame_display">2025.01.09上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.12/2026.01.12上課.html" target="main_frame_display">2025.01.12上課素材</a></li>
+          <li class="left_panel_list"><a href="./pages/2026.01.15/2026.01.15上課.html" target="main_frame_display">2025.01.15上課素材</a></li>
+        </ul>
+      </div>
+      <div id="main_frame"><!-- @B2M -->
+        <!-- 預設載入的readme頁面 -->
+        <iframe src="./html/readme.html" name="main_frame_display" height="100%" width="100%" title="Iframe Example" style="border:0"></iframe>
+        <!-- 圖片展示時用的div容器 -->
+        <div id="image_overlay" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:#000; z-index:1000; justify-content:center; align-items:center; cursor:pointer;">
+          <img id="overlay_img" src="" style="max-width:100%; max-height:100%; object-fit:contain;">
+        </div>
+      </div>
+      <div id="right_panel" class="collapsed"><!-- @B2R -->
+        <p>選個風景轉換一下心情</p>   
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p01.jpg')"><img src="./images/p01.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p02.jpg')"><img src="./images/p02.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p03.jpg')"><img src="./images/p03.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p04.jpg')"><img src="./images/p04.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p05.jpg')"><img src="./images/p05.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p06.jpg')"><img src="./images/p06.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p07.jpg')"><img src="./images/p07.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p08.jpg')"><img src="./images/p08.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p09.jpg')"><img src="./images/p09.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p10.jpg')"><img src="./images/p10.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p11.jpg')"><img src="./images/p11.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p12.jpg')"><img src="./images/p12.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p13.jpg')"><img src="./images/p13.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p14.jpg')"><img src="./images/p14.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p15.jpg')"><img src="./images/p15.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p16.jpg')"><img src="./images/p16.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p17.jpg')"><img src="./images/p17.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p18.jpg')"><img src="./images/p18.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p19.jpg')"><img src="./images/p19.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+        <a href="javascript:void(0)" onclick="zoomImage('./images/p20.jpg')"><img src="./images/p20.jpg" height="200px" width="250px" style="margin:10px 0px" alt="風景照"></a>
+      </div>      
+    </div>
+    <footer><!-- @footer -->
+      <p>© 2026 課程作業 | Designed by August Chang</p>
+      <div>
+        <a href="#">隱私權政策(暫無)</a> | 
+        <a href="mailto:XXXXX@gmail.com" title="暫不提供正確信箱">聯絡我</a> | 
+        <a href="https://github.com" target="_blank" title="連到GitHub首頁">GitHub</a>
+      </div>
+      <p style="font-size: 12px; color: #888; margin: 5px 0;">素材來源為Gemini、學員個人所有，未經許可請勿擅自轉載。</p>
+    </footer>
+    <!-- 以下放js檔------------------------------------------------------------ -->
+    <script src="./js/script.js"></script>
+    <!-- --------------------------------------------------------------------- -->
+  </body>
+</html>

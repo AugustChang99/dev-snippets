@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* zoom:2代表為該元素原本尺寸的2倍*/
+  #radio_group {zoom:1.5}
+  #checkbox_group {zoom:1.5}
+</style>
+<body>
+  <!-- autocomplete選off，就不會出現前面使用者填過的資訊(預設為on) -->
+  <!-- action等號後方可以放網頁的連結，這樣要傳的參數就會傳到那個網頁內 -->
+  <form action="" autocomplete="off" method="post">
+    <label for="fname">姓氏:</label>
+    <input type="text" id="fname" name="fname" placeholder="請輸入...">
+    <br>
+    <br>
+    <label for="lname">名字:</label>
+    <input type="text" id="lname" name="lname" placeholder="請輸入...">
+    <p></p>
+    <div id="radio_group">
+      <input type="radio" id="male" name="gender">
+      <label for="male" value="male">男</label>
+      <input type="radio" id="female" name="gender">
+      <label for="female" value="female">女</label>
+    </div>
+    <p></p>
+    <div id="checkbox_group">
+      <p>請選擇交通工具：</p>
+      <input type="checkbox" id="bicycle" name="bicycle">
+      <label for="bicycle">自行車</label>
+      <input type="checkbox" id="mortorcycle" name="mortorcycle">
+      <label for="motorcycle">機車</label>
+      <input type="checkbox" id="car" name="car">
+      <label for="car">車子</label>
+    </div>
+    <p></p>
+      <label>請選擇使用的瀏覽器：</label>
+      <input list="browsers" placeholder="請選擇...">
+      <datalist id="browsers">
+        <option value="Edge">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    <p></p>
+    <input type="submit">
+    <input type="reset">
+  </form> 
+</body>
+</html>

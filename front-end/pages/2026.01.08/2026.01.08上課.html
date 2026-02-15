@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>2026.01.08上課</title>
+  <style>
+    /* 外層容器，負責排版 */
+    .notes-container {
+      display: flex;
+      flex-wrap: wrap;
+      /* 自動換行 */
+      justify-content: center;
+      /* 置中排列 */
+      gap: 20px;
+      /* 卡片間距 */
+      padding: 20px;
+    }
+
+    /* 便條紙本身 */
+    .note {
+      margin: 10px;
+      background-color: #fff9c4;
+      border: 1px solid #fbc02d;
+      padding: 16px;
+      width: 200px;
+      height: 250px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    /* hover 效果 */
+    .note:hover {
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+      background-color: #fff176;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>2026.01.08上課</h1>
+  <hr>
+  <h3>【範例：bootstrap5的container class】</h3>
+  <div class="container">
+    <h4>container</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container-fluid">
+    <h4>container-fluid </h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container-fluid pt-1">
+    <h4>container-fluid pt-1(padding top的級別為第1級)</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container-fluid pt-3">
+    <h4>container-fluid pt-3(padding top的級別為第3級)</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container-fluid pt-5">
+    <h4>container-fluid pt-5(padding top的級別為第5級)</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container my-1">
+    <h4>container my-1 border</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container my-3">
+    <h4>container my-3 border</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container my-5">
+    <h4>container my-5 border</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container my-5 border">
+    <h4>container border my-5 border</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-info">
+    <h4>container bg-info</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-primary text-white">
+    <h4>container bg-primary text-white</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-dark text-white">
+    <h4>container bg-dark text-white</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-success text-white">
+    <h4>container bg-success text-white</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-warning text-white">
+    <h4>container bg-warning text-white</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <div class="container bg-danger text-white">
+    <h4>container bg-danger text-white</h4>
+    <p>我是p元素內的測試文字我是p元素內的測試文字我是p元素內的測試文字</p>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap5的width columns(預設為12格，所以可以3333切或48切…等)】</h3>
+  <div class="container-fluid mt-3">
+    <h4>3333切(非響應式設計)</h4>
+    <div class="row">
+      <div class="col p-3 bg-primary text-white">.col</div>
+      <div class="col p-3 bg-dark text-white">.col</div>
+      <div class="col p-3 bg-primary text-white">.col</div>
+      <div class="col p-3 bg-dark text-white">.col</div>
+    </div>
+    <h4>3333切(響應式設計)</h4>
+    <div class="row">
+      <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
+      <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
+      <div class="col-sm-3 p-3 bg-primary text-white">.col</div>
+      <div class="col-sm-3 p-3 bg-dark text-white">.col</div>
+    </div>
+    <h4>48切(響應式設計)</h4>
+    <div class="row">
+      <div class="col-sm-4 p-3 bg-primary text-white">.col</div>
+      <div class="col-sm-8 p-3 bg-dark text-white">.col</div>
+    </div>
+    <h4>66切(響應式設計)</h4>
+    <div class="row">
+      <div class="col-sm-6 p-3 bg-primary text-white">.col</div>
+      <div class="col-sm-6 p-3 bg-dark text-white">.col</div>
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：仿bootstrap自定義class標籤】</h3>
+  <div class="note-conatiner">
+    <div class="note">自製便條紙</div>
+    <div class="note">自製便條紙</div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap預設alert框】</h3>
+  <div class="container mt-3">
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Success!</strong> This alert box could indicate a successful or positive action.
+    </div>
+    <div class="alert alert-info alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+    </div>
+    <div class="alert alert-warning alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+    </div>
+    <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+    </div>
+    <div class="alert alert-primary alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Primary!</strong> Indicates an important action.
+    </div>
+    <div class="alert alert-secondary alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Secondary!</strong> Indicates a slightly less important action.
+    </div>
+    <div class="alert alert-dark alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Dark!</strong> Dark grey alert.
+    </div>
+    <div class="alert alert-light alert-dismissible">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <strong>Light!</strong> Light grey alert.
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap button】</h3>
+  <div class="container mt-3">
+    <button type="button" class="btn">Basic</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap button group】</h3>
+  <br>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Tablet</a>
+        <a class="dropdown-item" href="#">Smartphone</a>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="btn-group-vertical">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Sony</button>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap 進度條】</h3>
+  <div class="container mt-3">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80%"></div>
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap loading中】</h3>
+  <button class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+  </button>
+
+  <button class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+    Loading..
+  </button>
+
+  <button class="btn btn-primary" disabled>
+    <span class="spinner-border spinner-border-sm"></span>
+    Loading..
+  </button>
+
+  <button class="btn btn-primary" disabled>
+    <span class="spinner-grow spinner-grow-sm"></span>
+    Loading..
+  </button>
+  <hr>
+  <h3>【範例：bootstrap 換頁鈕】</h3>
+  <div class="container mt-3">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap 列表】</h3>
+  <div class="list-group">
+    <a href="#" class="list-group-item disabled">Disabled item</a>
+    <a href="#" class="list-group-item disabled">Disabled item</a>
+    <a href="#" class="list-group-item">Third item</a>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap 帶標籤的列表】</h3>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Inbox
+      <span class="badge bg-primary rounded-pill">12</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Ads
+      <span class="badge bg-primary rounded-pill">50</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Junk
+      <span class="badge bg-primary rounded-pill">99</span>
+    </li>
+  </ul>
+  <hr>
+  <h3>【範例：bootstrap 文字折疊鈕】</h3>
+  <div class="container mt-3">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+            Collapsible Group Item #1
+          </a>
+        </div>
+        <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+            Collapsible Group Item #2
+          </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+            Collapsible Group Item #3
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap 分頁切換】</h3>
+  <div class="container mt-3">
+    <br>
+    <!-- Nav pills -->
+    <ul class="nav nav-pills" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="pill" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu1">Menu 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="pill" href="#menu2">Menu 2</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="home" class="container tab-pane active"><br>
+        <h3>HOME</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.</p>
+      </div>
+      <div id="menu1" class="container tab-pane fade"><br>
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div id="menu2" class="container tab-pane fade"><br>
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam.</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap navigator範例】</h3>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://www.w3schools.com/bootstrap5/img_avatar1.png" alt="Logo" style="width:40px;"
+          class="rounded-pill">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Link</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <h3>【範例：bootstrap carousel】</h3>
+  <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel" style="width:600px">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner" sytle="height:10px">
+      <div class="carousel-item active">
+        <img src="https://www.w3schools.com/bootstrap5/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.w3schools.com/bootstrap5/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.w3schools.com/bootstrap5/ny.jpg" alt="New York" class="d-block" style="width:100%">
+      </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <hr>
+
+  <h3>【範例：bootstrap 對話框】</h3>
+  <div class="container mt-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+      Open modal
+    </button>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <h3>Some text to enable scrolling..</h3>
+          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap tooltip】</h3>
+  <div class="container mt-3">
+    <h3>Tooltip Example</h3>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
+      Hover over me!
+    </button>
+  </div>
+  <hr>
+  <h3>【範例：bootstrap 提示框】</h3>
+  <div class="container mt-3">
+    <a href="javascript:void(0)" title="Dismissible popover" data-bs-toggle="popover" data-bs-trigger="focus"
+      data-bs-content="Click anywhere in the document to close this popover">Click me</a>
+  </div>
+
+  <div class="container mt-3">  
+    <a href="#" title="Header" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Popover text">Hover over me</a>
+  </div>
+
+  <hr>
+  <h3>【範例：bootstrap toast】</h3>
+    <div class="container mt-3">
+      <button type="button" class="btn btn-primary" id="toastbtn">Show Toast</button>      
+      <div class="toast">
+        <div class="toast-header">
+          <strong class="me-auto">Toast Header</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+          <p>Some text inside the toast body</p>
+        </div>
+      </div>
+    </div>
+  <hr>
+  <h3>【範例：bootstrap scrollspy】</h3>
+    <iframe style="width:100%; height:500px" src="bootstrap_scrollspy.html"></iframe>
+  <hr>
+  <h3>【範例：bootstrap offcanvas sidebar】</h3>
+    <iframe style="width:100%; height:500px" src="bootstrap_offcanvas_sidebar.html"></iframe>
+  <!-- ++++++++++++++ -->
+  <script>
+    document.querySelectorAll(".note").forEach(note => { note.addEventListener("click", () => { note.setAttribute("contenteditable", "true"); note.focus(); }); });
+
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    document.getElementById("toastbtn").onclick = function() {
+      var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+      var toastList = toastElList.map(function(toastEl) {
+        return new bootstrap.Toast(toastEl)
+      })
+      toastList.forEach(toast => toast.show()) 
+    }
+  </script>
+</body>
+
+</html>

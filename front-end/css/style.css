@@ -1,0 +1,256 @@
+/*=========================================================================
+【DOM tree主要架構&定位記號查詢】@?
+
+  說明：Ctrl+F輸入對應的定位用記號可快速跳至該段落。輸入 @? 可快速跳回本段落。
+
+  定位記號             DOM tree主要架構
+--------------------------------------------------
+| @html       | html                             |
+| @head       |   |-head                         |
+| @body       |   |-body                         |
+| @B#1        |   |-div(class:top-container)     |
+| @header     |     |-header                     |
+| @nav        |     |-nav                        |
+| @B#2        |   |-div(class:container)         |
+| @B2L        |     |-div(id:left_panel)         |
+| @B2M        |     |-div(id:main_frame)         |
+| @B2R        |     |-div(id:right_panel)        |
+| @footer     |   |-footer                       |
+--------------------------------------------------
+
+===========================================================================*/
+/*【字體設定相關】*/
+  @font-face{
+    font-family: 'ChangaOne-Regular';
+    src: url('../fonts/ChangaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+/*==========================================================================*/
+/*【body元素相關】@body*/
+  body{
+    margin: 0;  /*重置瀏覽器針對body預留的margin，使網頁貼齊視窗邊緣*/
+  }
+/*==========================================================================*/
+/*【div(class:top-container)元素相關】@B#1*/
+  .top-container{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+/*==========================================================================*/
+/*【header元素相關】@header*/
+  header{
+    height: 80px;
+    background-color: #455A64;
+    background: url(../images/header.png);
+  }
+/*==========================================================================*/
+/*【nav元素相關】@nav*/
+  nav{
+    display: flex;
+    height: 40px;
+    align-items: stretch;
+    background-color: #546E7A;
+    color: white;
+    border-bottom: 1px rgb(172, 166, 166) solid;
+  }
+
+  /*針對最後一個dropdown項目設定靠右(右上角的漢堡包圖標)*/
+  nav li:last-child{
+    margin-left: auto; 
+  }
+/*---------------------------------------------------------------------------*/
+/*下拉式清單相關 */
+  li.dropdown{
+    display: inline-block;
+  }
+
+  .dropbtn{
+    font-family: 'ChangaOne-Regular', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px; /*只設定左右間距，上下交給flex處理*/
+    color: white;
+    font-size: 12pt;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  .dropdown:hover .dropbtn{
+    background-color: red;
+  }
+
+  .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover{
+    background-color: #f1f1f1;
+  }
+
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+/*==========================================================================*/
+/*【div(class:container)元素相關】@B#2*/
+  .container{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 120px); /*計算高度：100%視窗高度-header(80px)-nav(40px)*/
+    overflow: hidden;
+    position: relative; /*作為右側面板的定位基準*/
+  }
+/*==========================================================================*/
+/*【div(id:left_panel)元素相關】@B2L*/
+  #left_panel{
+    width: 200px;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
+    background-color: #78909C;
+    overflow-y: auto; /*當選單太長時，只有面板內部可捲動 */
+    overflow-x: hidden; /*防止縮放時出現水平捲軸*/
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* 確保陰影能蓋在中間面板上方 */
+    z-index: 2; /*主要展示區的z-index為1，所以左側面板會蓋過主要展示區*/
+  }
+
+  /*讓裡面的文字在縮放時不要亂跑*/
+  #left_panel ul{
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 當面板被加上.collapsed類別時，寬度變為0*/
+  #left_panel.collapsed{
+    width: 0;
+  }
+/*-------------------------------------------------------------------------*/
+/*左側面板選單相關*/
+  li.left_panel_list{
+    list-style-type: none; /*移除list前置的點符號*/
+    margin: 5px 10px;
+    transition: all 0.3s ease;
+  }
+
+  li.left_panel_list a{
+    display: block; /*讓點擊範圍撐滿整個區域*/
+    padding: 12px 15px;
+    color: #ECEFF1;
+    text-decoration: none; /*移除文字的底線*/
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid transparent;
+    border-radius: 4px;
+  }
+
+  li.left_panel_list a:hover{
+    background-color: #80b5cf;
+    color: white;
+    border-left: 4px solid #07cae4;
+    padding-left: 20px;
+    font-weight: bold;
+  }
+
+  li.left_panel_list a:active{
+    background-color: #7a9fb1;
+    transform: scale(0.98); /*點擊後略微縮小*/
+  }
+
+  li.left_panel_list.active a{
+    background-color: #4888d1;
+    color: white;
+    border-left: 4px solid #1479ec;
+    padding-left: 20px;
+    font-weight: bold;
+  }
+/*==========================================================================*/
+/*【div(id:main_frame)元素相關】@B2M */
+  #main_frame{
+    flex-grow: 1; /*讓main_frame自動填滿剩餘空間*/
+    background-color: white;
+    z-index: 1; /*在div(class:container)中的z-index層級最低*/
+  }
+/*==========================================================================*/
+/* 【div(id:right_panel)元素相關】@B2R */
+  #right_panel{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background-color: rgba(239, 235, 235, 0.95);
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /*讓內容由上而下排列*/
+    align-items: center; /*讓所有子元素水平置中*/
+    padding-top: 20px; /*頂部留一點空間，不要貼邊*/
+    overflow: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); 
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #right_panel img{
+    height: auto; /*保持圖片比例*/
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    filter: grayscale(100%); /*變為 100% 黑白*/
+    opacity: 0.5; /*設定為 0.5 不透明度*/
+    transition: filter 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+  }
+
+  #right_panel img:hover{
+    filter: grayscale(0%); /*恢復彩色*/
+    opacity: 1; /*恢復完全不透明*/
+    transform: scale(1.03); /*錨定後稍微放大個3%*/
+  }
+
+  /* 當面板被加上.collapsed類別時，將右側面板推出去畫面外(不推拉主要的展示區寛度)*/
+  #right_panel.collapsed{
+    transform: translateX(100%);
+  }
+/*==========================================================================*/
+/*【footer元素相關】@footer*/
+  footer{
+    background-color: #263238;
+    color: #CFD8DC;
+    font-size: 10pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  footer p{
+    margin: 5px 0;
+  }
+
+  footer a{
+    color: #81D4FA;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  footer a:hover{
+    text-decoration: underline;
+  }
+/*==========================================================================*/

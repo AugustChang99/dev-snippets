@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025.12.30上課</title>
+</head>
+<body>
+  <h1>2025.12.30上課</h1>
+  <hr>
+  <h3>【範例：字型&字體大小&邊框】</h3>
+  <h3 style="font-family:'Times newnorman'; font-size:72px; border:10px dashed gold">test</h3>
+  <h3 style="font-family:'Arial'; font-size:72px">test</h3>
+  <hr>
+  <h3>【範例：上標&下標】</h3>
+  X<sup>2</sup>+X=1
+  <br>
+  C<sub>2</sub>H<sub>5</sub>OH
+  </p>
+  <hr>
+  <p>
+  <h3>【範例：刪除線&底線】</h3>
+  <br>
+  <del>test</del>
+  <br>
+  <ins>test</ins>
+  </p>
+  <hr>
+  <p>
+  <h3>【範例：粗體&斜體】</h3>
+  <br>
+  <var>斜體</var>
+  <br>
+  <b>粗體</b>
+  </p>
+  <hr>
+  <h3>【範例：progress bar】</h3>
+    <label>progress:</label>
+    <progress id="progress_test" value="0" max="100"></progress>
+  <script>
+    const progressBar = document.getElementById("progress_test");
+    let value = progressBar.value; // 從目前的值開始
+
+    // 每毫秒增加 1%
+    const interval = setInterval(() => {
+      value++;
+      progressBar.value = value;
+
+      if (value >= 100) {
+        clearInterval(interval); // 停止計時器
+      }
+    }, 1); // 1 毫秒
+  </script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026.01.07上課</title>
+</head>
+
+<style>
+  :root {
+  --test1: #1e90ff;
+  --test2: #ffffff; 
+  }
+
+  .container {
+  color: var(--test1);
+  background-color: var(--test2);
+  padding: 15px;
+  }
+  /*++++++++++++++++++++++++++++++++++*/
+  p.test {
+  width: 170px; 
+  border: 1px solid #000000;
+  padding: 8px;
+  word-wrap: break-word;
+  }
+
+  p.test1 {
+    width: 150px; 
+    border: 1px solid;
+    padding: 8px;    
+    word-break: normal;
+  }
+
+  p.test2 {
+    width: 150px; 
+    border: 1px solid;
+    padding: 8px;    
+    word-break: break-all;
+  }
+
+  p.test3 {
+  writing-mode: vertical-rl; 
+  }
+
+  #myDiv1 {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border: 1px solid black;
+    margin:100px;
+  }
+
+  #myDiv2 {
+    transform: rotateZ(20deg);
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border: 1px solid black;
+    margin:100px;
+    }
+
+  #myDiv3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 1s, height 1s, background-color 3s;
+  }
+
+  #myDiv3:hover {
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+  }
+
+  #myDiv4 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+  }
+
+  #myDiv4:hover {
+    width: 300px;
+    height: 300px;
+    background-color: orange;  
+    transform: rotateZ(180deg);
+  }
+
+  #div1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-timing-function: linear;
+  }
+
+  #div2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-timing-function: ease;
+  }
+
+  #div3 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-timing-function: ease-in;
+  }
+
+  #div4 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-timing-function: ease-out;
+  }
+
+  #div5 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  #div1:hover {
+    width: 300px;
+  }
+
+  #div2:hover {
+    width: 300px;
+  }
+
+  #div3:hover {
+    width: 300px;
+  }
+
+  #div4:hover {
+    width: 300px;
+  }
+
+  #div5:hover {
+    width: 300px;
+  }
+
+  #div6 {
+    text-align: center;
+    padding:10px;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: myAnimation;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes myAnimation {
+    0%   {background-color:red; left:0px; top:0px; transform: rotateZ(0deg); border-radius:0px;}
+    25%  {background-color:yellow; left:200px; top:0px; transform: rotateZ(90deg);border-radius:25px;}
+    50%  {background-color:blue; left:200px; top:200px; transform: rotateZ(180deg);border-radius:50px;}
+    75%  {background-color:green; left:0px; top:200px; transform: rotateZ(270deg);border-radius:25px;}
+    100% {background-color:red; left:0px; top:0px; transform: rotateZ(360deg);border-radius:0px;}
+  }
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++*/
+/**/
+  .tooltip1 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+  }
+
+  .tooltiptext1 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+  }
+
+  .tooltiptext1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+
+  .tooltip1:hover .tooltiptext1 {
+    visibility: visible;
+  }
+
+  .tooltip2 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    cursor: pointer;  
+  }
+
+  .tooltiptext2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltiptext2::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+
+  .tooltip2:hover .tooltiptext2 {
+    visibility: visible;
+  }
+
+  .mask1 {
+  max-width: 600px;
+  height: 400px;
+  background: url(https://www.w3schools.com/css/img_5terre.jpg) no-repeat;
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient (black, transparent);
+  }
+  /**++++++++++++++++++++++++++++++++++++++++++*/
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  opacity: 0.5;
+  }
+
+  .button:hover {
+    opacity: 1;
+  }
+
+  .button span {
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  /*+++++++++++++++++++++++++++++++++++++++*/
+  .pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+  }
+
+  .pagination li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid gray;
+    color: black;
+    margin: 0 4px;
+    border-radius: 5px;
+    transition: background-color 1s;  
+  }
+
+  .pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .pagination li a:hover:not(.active) {
+    background-color: lightgray;
+  }
+
+  /*+++++++++++++++++++++++++++++++++++++++*/
+  ul.breadcrumb {
+  padding: 8px;
+  list-style: none;
+  background-color: #eee;
+  }
+
+  ul.breadcrumb li {display: inline;}
+  ul.breadcrumb li a {color: green;}
+
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  /*+++++++++++++++++++++++++++++++++++++++*/
+    .newspaper {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: lightblue;
+  }
+</style>
+
+<body>
+  <h1>2026.01.07上課</h1>
+  <hr>
+  <h3>【範例：文字換行】</h3>
+    <p class="test">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+  <hr>
+  <h3>【範例：文字斷句】</h3>
+  <p class="test1">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+  <p class="test2">This paragraph contains some text. The lines will break at any character.</p>
+  <hr>
+  <h3>【範例：文字方向改變】</h3>
+  <p class="test3">Some text with writing-mode: vertical-rl.</p>
+  <hr>
+  <h3>【範例：元素旋轉】</h3>
+    <div id="myDiv1">
+    This a normal div element.
+    </div>
+
+    <div id="myDiv2">
+    拿Z軸當軸心旋轉20度
+    </div>
+  <hr>
+  <h3>【範例：動畫示範】</h3>
+    <div id="myDiv3">div元素</div>
+    <br><br><br>
+    <div id="myDiv4">div元素</div>
+  <hr>
+  <h3>【範例：動畫示範(變速)】</h3>
+    <div id="div1">linear</div><br>
+    <div id="div2">ease</div><br>
+    <div id="div3">ease-in</div><br>
+    <div id="div4">ease-out</div><br>
+    <div id="div5">ease-in-out</div><br>
+  <hr>
+  <h3>【範例：自訂動畫】</h3>
+    <div id="div6">div元素</div>
+  <hr>
+  <h3>【範例：提示框】</h3>
+    <div class="tooltip1">Hover over me
+      <span class="tooltiptext1">Tooltip text</span>
+    </div>
+    <br><br><br>
+    <div class="tooltip2">Hover over me
+      <span class="tooltiptext2">Tooltip text</span>
+    </div>
+  <hr>
+  <h3>【範例：縮圖連結】</h3>
+    <a target="_blank" href="https://www.w3schools.com/css/paris.jpg">
+      <img src="https://www.w3schools.com/css/paris.jpg" alt="Paris"
+      style="width: 50px 50px; border-radius: 50%;">
+    </a>
+  <hr>
+  <h3>【範例：圖片效果範例】</h3>
+    <iframe src="圖片效果範例.html" style="width:100%; height:500px;">圖片效果範例</iframe>
+  <hr>
+  <h3>【範例：圖片漸層】</h3>
+    <div class="mask1" style="color: white; font-size:16pt">
+      <p>Cinque Terre is a coastal area within Liguria, in the northwest of Italy. It lies in the west of La Spezia Province, and comprises five villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+      <p>Cinque Terre is a coastal area within Liguria, in the northwest of Italy. It lies in the west of La Spezia Province, and comprises five villages: Monterosso al Mare, Vernazza, Corniglia, Manarola, and Riomaggiore.</p>
+    </div>
+  <hr>
+  <h3>【範例：CSS互動按鈕】</h3>
+    <button class="button" style="vertical-align:middle"><span>Hover </span></button>
+  <hr>
+  <h3>【範例：導覽列】</h3>
+    <ul class="pagination">
+      <li><a href="#">&laquo;</a></li>
+      <li><a href="#">1</a></li>
+      <li><a class="active" href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">&raquo;</a></li>
+    </ul>
+  <hr>
+  <h3>【範例：麵包屑導覽】</h3>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Pictures</a></li>
+      <li><a href="#">Summer 25</a></li>
+      <li>Italy</li>
+    </ul>
+  <hr>
+  <h3>【範例：文字分欄】</h3>
+    <div class="newspaper">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.
+    </div>
+  <hr>
+  <h3>【範例：CSS變數調用示範】</h3>
+    <div class="container">
+      <h4>Lorem Ipsum</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+      <p class="note">This is a note!</p>
+    </div>
+
+</body>
+</html>

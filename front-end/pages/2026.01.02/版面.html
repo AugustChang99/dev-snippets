@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  .container{display:flex;}
+  .container div{width:70%; height: 500px;}
+  .container aside{width:30%; height:500px;background-color: pink}
+
+  header{background-color: skyblue; height: 100px;}
+  nav{background-color: lightgreen; height: 100px;}
+  section{background-color: bisque; height: 250px;}
+  article{background-color: grey; height: 250px;}
+  footer{background-color: black;color: white; height: 200px;}
+
+  /*當畫面小於800px時，將div、aside的寬度占比改為50%、50%(沒加這一段會維持原本的70%、30%)*/
+  @media screen and (max-width: 800px) {
+    .container div,.container aside {
+      width: 50%; 
+    }
+  }
+
+</style>
+<body>
+  <header>header的內容</header>
+  <nav>naviagtion的內容</nav>
+  <div class="container">
+    <div>
+      <section>section的內容</section>
+      <article>article的內容</article>
+    </div>
+    <aside>aside的內容</aside>
+  </div>
+  <footer>footer的內容</footer>
+</body>
+</html>

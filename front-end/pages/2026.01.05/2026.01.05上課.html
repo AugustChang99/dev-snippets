@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026.01.05上課</title>
+</head>
+<style>
+  body {
+  background-image: url("https://www.w3schools.com/css/img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  }
+
+  #p01{
+    border-style: dashed;
+    border-width: 2px; 
+    border-color: red;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    margin: 25px 50px 75px 100px;
+  }
+
+  #p02{
+    border-width: 2px; 
+    border-color: green;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    padding: 25px 50px 75px 100px;
+  }
+
+  #p03{
+    border-left: 6px solid red;
+  }
+
+  #p04{
+    border-width: 5px; 
+    border-style: solid;
+    border-color: red; 
+    border-radius: 10px;   
+
+    outline-width: 5px;    
+    outline-style: solid;
+    outline-color: blue;
+  }
+
+  #p05{
+
+  }
+</style>
+<body>
+  <h1>2026.01.05上課</h1>
+  <hr>
+  <h3>【範例：一般輸入框】</h3>
+    <form action="">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname"><br><br>
+      <button type="submit">提交</button>
+    </form> 
+  <hr>  
+  <h3>【範例：加密輸入框】</h3>
+    <p>The <strong>input type="password"</strong> defines a password field:</p>
+    <form action="">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="pwd">Password:</label><br>
+      <input type="password" id="pwd" name="pwd"><br><br>
+      <button type="submit" value="Submit">提交</button>
+    </form>
+  <hr>
+  <h3>【範例：單選框】</h3>
+    <form>
+      <input type="radio" id="html" name="fav_language" value="HTML">
+      <label for="html">HTML</label><br>
+      <input type="radio" id="css" name="fav_language" value="CSS">
+      <label for="css">CSS</label><br>
+      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+      <label for="javascript">JavaScript</label>
+    </form>
+  <hr>
+  <h3>【範例：複選框】</h3>
+    <form>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> I have a bike</label><br>
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+      <label for="vehicle2"> I have a car</label><br>
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+      <label for="vehicle3"> I have a boat</label>
+    </form>
+  <hr>
+  <h3>【範例：挑選顏色】</h3>
+    <form>
+      <label for="favcolor" id="test_header">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor" onblur="alert(favcolor.value)">
+    </form>
+  <hr>
+  <h3>【範例：日期輸入】</h3>
+    <form>
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday">
+    </form>
+  <hr>
+  <h3>【範例：email輸入】</h3>
+    <form>
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email">
+    </form>
+  <hr>
+  <h3>【範例：將圖片做成送出按鈕】</h3>
+    <form>
+      <input type="image" src="https://static.vecteezy.com/system/resources/thumbnails/022/979/762/small/submit-button-icon-for-graphic-design-logo-website-social-media-mobile-app-ui-illustration-vector.jpg" width="48" height="48">
+    </form>
+  <hr>
+  <h3>【範例：上傳檔案】</h3>
+    <form>
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile">
+    </form>
+  <hr>
+  <h3>【範例：月份輸入】</h3>
+    <form>
+      <label for="bdaymonth">Birthday (month and year):</label>
+      <input type="month" id="bdaymonth" name="bdaymonth">
+    </form>
+  <hr>
+  <h3>【範例：數字輸入】</h3>
+    <form>
+      <label for="quantity">Quantity (between 0 and 100):</label>
+      <input type="number" id="quantity" name="quantity" min="0" max="10" step="0.5">
+    </form>
+  <hr>
+  <h3>【範例：範圍滑桿範例】</h3>
+    <form>
+      <label for="vol">Volume (between 0 and 50):</label>
+      <input type="range" id="vol" name="vol" min="0" max="50">
+    </form>
+  <hr>
+  <h3>【範例：pattern資料驗證&required必填&正則表達式】</h3>
+  <!-- 利用 pattern 屬性驗證使用者的輸入格式 -->
+  <!-- required 屬性代表此欄必填 -->
+  <!-- maxlength 屬性限制使用者填入的字串字元數 -->
+  <!-- placeholder 屬性展示預設的提示文字給使用者看  -->
+  <!-- width 屬性用來調整輸入欄位的寬度 -->
+  <!-- autofocus 屬性用來讓該欄位在網頁打開時獲得焦點 -->
+    <form>
+      <label for="phone_number">Phone number:</label>
+      <input type="text" id="phone_number" name="phone_number" pattern="09\d{8}" title="請輸入手機號碼" maxlength="10" placeholder="例：0912345678" style="width: 120px;" autofocus required><br><br>
+      <button type="submit">提交</button>
+    </form>
+  <hr>
+  <h3>【範例：影片展示】</h3>
+    <!-- 可以觀察影片來源的網址，就知道影片被放在哪個路徑底下 -->
+    <div style="text-align:center"></div>
+      <button id="action_button">播放/暫停</button>
+      <button id="enlarge_button">放大</button>
+    </div><br><br>
+    <video width="320" height="240" id="video01" controls>
+      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+    </video>
+  <hr>
+  <h3>【範例：youtube影片播放】</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ENE0L4gaM1s?si=OqDowKPXZ0Vzwug7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <hr>
+  <h3>【範例：CSS測試】</h3>
+    <p id="p01">測試文字1</p>
+    <p id="p02">測試文字2</p>
+    <p id="p03">測試文字3</p>
+    <p id="p04">測試文字4</p>
+    <p id="p05">測試文字5</p>
+  <script>
+/////////////////////////
+//【change color相關函式範例】
+// 寫法1：正常寫法 
+    function change_color(){
+      test_header.style.color = favcolor.value;
+    }
+    favcolor.onchange = change_color;
+
+/* 寫法2：箭頭函式
+    favcolor.onchange = () => test_header.style.color = favcolor.value;
+*/
+
+/* 寫法3：addEventListener
+    function change_color(){
+      test_header.style.color = favcolor.value;
+    }
+    favcolor.addEventListener('change', change_color);
+*/
+//////////////////////////
+// 【影片展示範例用】
+    function play_pause() { 
+      if (video01.paused) video01.play();
+      else video01.pause(); 
+    }
+    action_button.onclick = play_pause;
+
+    function make_big(){
+      video01.width = 600;
+      video01.height = 480;
+    }
+    enlarge_button.onclick = make_big;
+
+    //////////////////
+  </script>
+</body>
+</html>

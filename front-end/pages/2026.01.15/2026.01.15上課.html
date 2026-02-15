@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026.01.15上課</title>
+  <style>
+    [type=text]{width: 100px;}
+    form {zoom:1.5}
+  </style>
+</head>
+<body>
+  <h1>2026.01.15上課</h1>
+  <hr>
+  <h3>【範例：照片切換】</h3>
+    <button type="button" style="font-size: 20px" id="next_photo_btn">換照片</button>
+    <p></p>
+    <img id="now_image" src="" alt="">
+    <marquee scrollAmount="10" direction="right">點擊按鈕看圖片</marquee>
+  <hr>
+  <h3>【範例：按鈕隱藏文字、顯示文字】</h3>
+    <p id="p1">
+    This is a text.
+    This is a text.
+    This is a text.
+    This is a text.
+    </p>
+    <input type="button" value="Hide text" onclick="document.getElementById('p1').style.visibility='hidden'">
+    <input type="button" value="Show text" onclick="document.getElementById('p1').style.visibility='visible'">
+  <hr>
+  <h3>【範例：輸入框】</h3>
+    <form action="">
+      <input type="text" id="firstname" placeholder="名">
+      <input type="text" id="lastname" placeholder="姓">
+      <input type="checkbox" id="check_item01"><label>選項1</label>       
+      <input type="checkbox" id="check_item01"><label>選項2</label>
+      <input type="checkbox" id="check_item01"><label>選項3</label>
+      <p></p>
+      <button type="submit">傳送</button>       
+    </form>
+  <hr>
+  <h3>【範例：顯示時間】</h3>
+    <button id="myBtn">Time is?</button>
+
+    <p id="demo"></p>
+  <hr>
+  <h3>【範例：滑鼠軌跡追踪】</h3>
+    <p id="demo2">Move the mouse in this window!</p>
+  <hr>
+  <h3>【範例：mouseover、mouseout events】</h3>
+    <div id="box"
+    style="width:200px;height:100px;padding:16px;border:1px solid #000;">
+    Move mouse over this box!
+    </div>
+  <hr>
+  <h3>【範例：鍵盤偵測】</h3>
+    <input id="k" type="text" placeholder="Press a key here!">
+    <p id="demo3"></p>
+
+    <input id="in01" type="text" placeholder="Press Enter">
+    <p id="demo4"></p>
+  <hr>
+  <h3>【範例：時鐘】</h3>
+    <p id="clock"></p>
+  <script src="script.js"></script>
+</body>
+</html>

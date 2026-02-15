@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //====================================
+    //【範例：透過迴圈產生方塊】
+    //------------------------------------
+    //寫法1
+//      let now_box;
+//      for (let i = 1; i < 1001; i++) {
+//        now_box= document.createElement('div');
+//        now_box.id = 'box' + String(i).padStart(4, '0000');
+
+        //計算要random的色碼
+//        color_n = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')
+
+//        with (now_box.style){
+//          width = height = '50px';
+//          backgroundColor = '#' + color_n;
+//          margin = '2px';
+//          display = 'inline-block';
+//          borderRadius = '5px';
+//        }
+//        document.body.append(now_box); 
+//      }
+
+    //寫法2
+//      let i, now_box, color_n, box_style;
+
+//      for (i = 1; i < 1001; i++)
+//      {
+//        now_box = document.createElement('div');
+//        now_box.id = 'box' + String(i).padStart(4, '0');
+        
+//        color_n = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+
+//        box_style = {width: '50px', height: '50px', backgroundColor: '#' + color_n, margin: '2px', display: 'inline-block', borderRadius: '5px'};
+//        Object.assign(now_box.style, box_style);
+//        document.body.append(now_box);
+//      }
+
+    //寫法3
+      let i, now_box, color_n, box_style, origin_color;
+
+      for (i = 1; i < 1001; i++)
+      {
+        now_box = document.createElement('div');
+        now_box.id = 'box' + String(i).padStart(4, '0');
+        
+        color_n = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+
+        box_style = {width: '50px', height: '50px', backgroundColor: '#' + color_n, margin: '2px', display: 'block', float: 'left', borderRadius: '5px', textAlign: 'center'};
+        Object.assign(now_box.style, box_style);
+        now_box.onmouseover = function (e)
+        {
+          origin_color = e.target.style.backgroundColor;
+          e.target.innerText = 'H';
+          e.target.style.backgroundColor = 'Lime';
+        };
+        now_box.onmouseout = function (e)
+        {
+          e.target.textContent = '';
+          e.target.style.backgroundColor = origin_color;
+        };
+        
+        document.body.append(now_box);
+      }
+    //====================================
+    
+  </script>
+</body>
+</html>
+
+
+
+
+
+now_box.onmouseover = function (e)

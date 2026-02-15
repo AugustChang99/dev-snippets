@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let i, j, k;
+    let multiplicand, result;
+    for (i = 1; i < 4; i++){
+      for (j = 1; j < 10; j++){
+        for (k = 1; k < 4; k++){
+          multiplicand = 3 * (i - 1) + k;
+          result = String(multiplicand * j).padStart(2, '_');
+          document.body.insertAdjacentHTML('beforeend', `<span style="color: Lime; font-size: 20px; font-family: consolas; margin-right: 30px">${multiplicand} x ${j} = ${result}</span>`);
+        }
+        document.body.insertAdjacentHTML('beforeend', '<br>');
+      }
+      document.body.insertAdjacentHTML('beforeend', '<br>');
+    }
+  </script>
+</body>
+</html>

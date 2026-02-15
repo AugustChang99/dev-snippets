@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026.01.02</title>
+</head>
+<body>
+  <h1>2026.01.02上課</h1>
+  <hr>
+  <h3>【範例：按鈕】</h3>
+  <input type="button" value="測試鈕01">
+  <button type="button">測試鈕02</button>
+  <input type="submit" value="測試鈕03">
+  <button type="submit">測試鈕04</button>
+  <input type="reset" value="測試鈕05">
+  <button type="reset">測試鈕06</button>
+  <hr>
+  <h3>【範例：iframe網頁嵌入】</h3>
+  <iframe src="../2025.12.31/2025.12.31上課.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+  <p><a href="../2025.12.30/test01.html" target="iframe_a">切換到test01.html</a></p>
+  <hr>
+  <h3>【範例：iframe影片嵌入】</h3>
+  <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+  <hr>
+  <h3>【範例：java script】</h3>
+  <p id="demo"></p>
+  <p id="demo2">JavaScript can change the style of an HTML element.</p>
+  <button type="button" id="button01" title="沒綁任何function">無功能按鈕</button>
+  <br>
+  <br>
+  <button type="button" id="click_me" onclick="myFunction()" title="點擊可切換顏色">有功能按鈕</button>
+  <hr>
+  <h3>【範例：切版練習】</h3>
+  <a href="版面.html" target="_blank">點我看範例</a>
+  <iframe src="版面.html" height="300px" width="100%"></iframe>
+  <hr>
+  <h3>【範例：bootstrap排版範例】</h3>
+  <a href="bootstrap.html" target="_blank">點我看範例</a>  
+  <iframe src="bootstrap.html" height="300px" width="100%"></iframe>
+  <hr>
+  <h3>【範例：表單範例】</h3>
+  <a href="forms.html" target="_blank">點我看範例</a>
+  <iframe src="forms.html" height="300px" width="100%"></iframe>
+  <!------------------------------------------------------------->
+  <script>
+  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+
+
+
+  function myFunction() {
+  //JS綁CSS寫法1，基本寫法
+  document.getElementById("demo2").style.fontSize = "25px";
+  document.getElementById("demo2").style.color = "red";
+  document.getElementById("demo2").style.backgroundColor = "yellow";
+  document.getElementById("click_me").style.backgroundColor = "blue";
+  document.getElementById("click_me").style.color = "white";
+
+  //JS綁CSS寫法2，使用with(可把重覆的部份省略)
+  with (document.getElementById('demo').style){
+  backgroundColor = "lightgreen";
+  color = "white";}
+
+  //JS綁CSS寫法3，使用物件指派(嚴格模式下也能用)
+  var style_obj = {color: 'white', backgroundColor: 'skyblue'};
+  Object.assign(document.getElementById('button01').style, style_obj);
+
+  }
+
+
+  </script>
+</body>
+</html>

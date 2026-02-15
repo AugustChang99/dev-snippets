@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026.01.06上課</title>
+
+  <!-- bootstrap的icon   -->
+
+</head>
+<style>
+  p.a {
+    text-align-last: right;
+  }
+
+  p.b {
+    text-align-last: center;
+  }
+
+  p.c {
+    text-align-last: justify;
+  }
+
+  p.uppercase {
+    text-transform: uppercase;
+  }
+
+  p.lowercase {
+    text-transform: lowercase;
+  }
+
+  p.capitalize {
+    text-transform: capitalize;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #38444d;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  div.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  div.gallery-item {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 180px;
+  }
+
+  div.gallery-item:hover {
+    border: 10px solid #daf205;
+  }
+
+  div.gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  div.gallery-item div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  label {display: block;}
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  #search {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  }
+
+  textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  }
+
+  #div1 {
+  border-radius: 70px / 30px;
+  background: #04AA6D;
+  width: 200px;
+  height: 150px; 
+  }
+
+  #div2 {
+    border-radius: 15px / 50px;
+    background: #04AA6D;
+    width: 200px;
+    height: 150px; 
+  }
+
+  #div3 {
+    border-radius: 50%;
+    background: #04AA6D;
+    width: 200px;
+    height: 150px;
+  } 
+
+  #div4 {
+    border-radius: 50%;
+    background: #04AA6D;
+    width: 200px;
+    height: 200px;
+  } 
+
+  #div5 {
+  border-radius: 15px 50px 30px 5px;
+  background: #04AA6D;
+  width: 200px;
+  height: 150px; 
+  }
+
+  #div6 {
+    border-radius: 15px 50px 30px;
+    background: #04AA6D;
+    width: 200px;
+    height: 150px; 
+  }
+
+  #div7 {
+    border-radius: 15px 50px;
+    background: #04AA6D;
+    width: 200px;
+    height: 150px; 
+  } 
+
+  #div8 {
+    border-radius: 15px;
+    background: #04AA6D;
+    width: 200px;
+    height: 150px; 
+  } 
+
+  #panel, .flip {
+  padding: 10px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  border: solid 1px #a6d8a8;
+  margin: auto;
+  cursor: pointer;  
+  }
+
+  #panel {
+    display: none;
+    cursor: auto;
+  }
+</style>
+<body>
+  <h1>2026.01.06上課</h1>
+  <hr>
+    <h3>【範例：末行對齊】</h3>
+    <h4>text-align-last: right:</h4>
+    <p class="a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+    <h4>text-align-last: center:</h4>
+    <p class="b">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+    <h4>text-align-last: justify:</h4>
+    <p class="c">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+  <hr>
+  <h3>【範例：大小寫】</h3>
+    <p class="uppercase">全部文字大寫：This text is transformed to uppercase.</p>
+    <p class="lowercase">全部文字小寫：This text is transformed to lowercase.</p>
+    <p class="capitalize">單字的首字母大寫：This text is capitalized.</p>
+  <hr>
+  <h3>【範例：改滑鼠圖標】</h3>
+    <span style="cursor:auto">auto</span><br>
+    <span style="cursor:crosshair">crosshair</span><br>
+    <span style="cursor:default">default</span><br>
+    <span style="cursor:e-resize">e-resize</span><br>
+    <span style="cursor:help">help</span><br>
+    <span style="cursor:move">move</span><br>
+    <span style="cursor:n-resize">n-resize</span><br>
+    <span style="cursor:ne-resize">ne-resize</span><br>
+    <span style="cursor:nw-resize">nw-resize</span><br>
+    <span style="cursor:pointer">pointer</span><br>
+    <span style="cursor:progress">progress</span><br>
+    <span style="cursor:s-resize">s-resize</span><br>
+    <span style="cursor:se-resize">se-resize</span><br>
+    <span style="cursor:sw-resize">sw-resize</span><br>
+    <span style="cursor:text">text</span><br>
+    <span style="cursor:w-resize">w-resize</span><br>
+    <span style="cursor:wait">wait</span><br>
+  <hr>
+  <h3>【範例：導覽列範例】</h3>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </li>
+    </ul>
+  <hr>
+  <h3>【範例：圖片選取】</h3>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a target="_blank" href="https://www.w3schools.com/css/img_5terre.jpg">
+          <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc">Cinque Terre</div>
+      </div>
+      <div class="gallery-item">
+        <a target="_blank" href="https://www.w3schools.com/css/img_forest.jpg">
+          <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Green Forest</div>
+      </div>
+      <div class="gallery-item">
+        <a target="_blank" href="https://www.w3schools.com/css/img_lights.jpg">
+          <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Northern Lights</div>
+      </div>
+      <div class="gallery-item">
+        <a target="_blank" href="https://www.w3schools.com/css/img_mountains.jpg">
+          <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Mountains</div>
+      </div>
+    </div>
+  <hr>
+  <h3>【範例：含CSS的表單】</h3>
+    <form action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+      <input type="submit">
+    </form>
+  <hr>
+  <h3>【範例：含CSS的搜尋框】</h3>
+    <form>
+      <input type="text" name="search" placeholder="Search.." id="search">
+    </form>
+  <hr>
+  <h3>【範例：含CSS的文本輸入框】</h3>
+    <form>
+      <textarea style="resize:none">右下角不可拖動</textarea>
+      <br><br><br>
+      <textarea>右下角可拖動</textarea>
+    </form>
+  <hr>
+  <h3>【範例：border-radius】</h3>
+    <p>Elliptical shape - border-radius: 70px / 30px:</p>
+    <div id="div1"></div>
+
+    <p>Elliptical shape - border-radius: 15px / 50px:</p>
+    <div id="div2"></div>
+
+    <p>Oval shape - border-radius: 50%:</p>
+    <div id="div3"></div>
+
+    <p>Circular shape - border-radius: 50%:</p>
+    <div id="div4"></div>
+
+    <p>Four values - border-radius: 15px 50px 30px 5px:</p>
+    <div id="div5"></div>
+
+    <p>Three values - border-radius: 15px 50px 30px:</p>
+    <div id="div6"></div>
+
+    <p>Two values - border-radius: 15px 50px:</p>
+    <div id="div7"></div>
+
+    <p>One value - border-radius: 15px:</p>
+    <div id="div8"></div>
+  <hr>
+  <h3>【範例：物件隱藏、展示】</h3>
+    <p class="flip" onclick="myFunction()">Click to show/hide panel</p>
+
+    <div id="panel">
+      <p>The panel toggles between hiding and showing a div element.</p>
+      <p>W use JavaScript to open and close it.</p>
+      <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+    </div>
+  <script>
+  function myFunction() {
+    var x = document.getElementById("panel");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+
+</body>
+</html>
