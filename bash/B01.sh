@@ -123,7 +123,6 @@ do
     1)
         #read -p 'Which method?(b3lyp, mp2, CCSD....)' method
         read -p 'How many atoms in your compound?=>' how_many_atoms
-        # 【想一下】=>如果使用者腦殘key錯要怎麼辦=>也把這部份寫進setting好了，然後default就1000(?
         read -p 'The Charge of this job is : neutral(\"0\") cation(\"1\") anion(\"-1\") ?=>' charge
         read -p 'The Multiplicity of this job is : Single(\"1\") Doublet(\"2\") Triplet(\"3\") ?=>' multiplicity
 
